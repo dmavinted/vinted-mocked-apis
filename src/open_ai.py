@@ -14,8 +14,7 @@ class OpenAiError(Exception):
 class OpenAiImageAnalyzerSimulator:
 
     def __init__(self, api_key: str):
-        self.base_url = "https://googleads.googleapis.com"
-        self.version = "v11"
+        self.base_url = "https://api.openai.com/v1/completions"
         self.api_key = api_key
         assert self.api_key
 
@@ -51,7 +50,7 @@ class OpenAiImageAnalyzerSimulator:
             "tattoo": random.choice([True, False]),
             "overlay_text": random.choice([True, False]),
             "brand": random.choice([True, False]),
-            "cloth": random.choice([True, False])
+            "cloth": random.choice([True, False]),
         }
 
         # Decide randomly whether to return a well-formed or malformed JSON
